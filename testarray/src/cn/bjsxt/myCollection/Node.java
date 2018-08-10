@@ -15,7 +15,7 @@ public class Node{
 		this.obj = obj;
 		this.next = next;
 	}
-	public Object getPrevious() {
+	public Node getPrevious() {
 		return previous;
 	}
 	public void setPrevious(Node previous) {
