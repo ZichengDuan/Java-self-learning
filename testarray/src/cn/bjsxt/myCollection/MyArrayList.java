@@ -1,5 +1,7 @@
  package cn.bjsxt.myCollection;
 
+import java.util.Arrays;
+
 import javax.swing.plaf.synth.SynthSeparatorUI;
 
 /**
@@ -22,7 +24,7 @@ public class MyArrayList {
 	 public void add(Object obj) {
 		 value[size] = obj;
 		 size++;
-		 if(size >= value.length -1 ) {
+		 if(size >= value.length - 1 ) {
 			 //装不下，扩容
 			 int newCapacity = value.length * 2;
 			 Object[] newList = new Object[newCapacity];
@@ -44,6 +46,17 @@ public class MyArrayList {
 		 return value[index];
 	 }
 	 
+	 public void remove(int index) {
+		 //删除指定位置对象
+		 if(index >=  size) {
+			 System.out.println("输入的检索值过大，请输入小于" + size + "的数字！");
+			 System.exit(-1);
+		 }
+		 System.arraycopy(value, index + 1, value, index, size-index -1);
+		 value[--size] = null;
+	 }
+	 
+	 
 	 public static void main(String[] args) {
 		MyArrayList list = new MyArrayList(2);
 		list.add("aaa");
@@ -53,14 +66,14 @@ public class MyArrayList {
 		list.add("bbbbb");
 		list.add("bbbbb");
 		list.add("bbbbb");
-//		System.out.println(list.get(0));
-//		System.out.println(((Human) list.get(1)).getName());
-//		System.out.println(list.get(2));
-//		System.out.println(list.get(3));
-//		System.out.println(list.get(4));
-//		System.out.println(list.get(5));
-//		System.out.println(list.get(6));
-		System.out.println(list.toString());
+		for(int i = 0; i < list.size;i++) {
+			System.out.print(list.get(i) + "  ");
+		}
+		System.out.println();
+		list.remove(7);
 		
+		for(int i = 0; i < list.size;i++) {
+			System.out.print(list.get(i) + "  ");
+		}
 	 }
 }
