@@ -57,8 +57,8 @@ public class MyArrayList {
 	 }
 	 
 	 
-	 public static void main(String[] args) {
-		MyArrayList list = new MyArrayList(2);
+	 public static void main(String[] args) {		
+		 MyArrayList list = new MyArrayList(2);
 		list.add("aaa");
 		list.add(new Human("dzc"));
 		list.add(new Human("dzcc"));
