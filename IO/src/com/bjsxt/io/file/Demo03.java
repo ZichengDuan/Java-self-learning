@@ -14,5 +14,6 @@ public class Demo03 {
 		System.out.println(src.getParent());//返回上一级目录
 		System.out.println(src.getName());
 		System.out.println(src.exists());
+		
 	}
 }
